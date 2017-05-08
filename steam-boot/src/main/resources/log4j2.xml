@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status='fatal' packages="com.haiziyouke">
+
+	<Properties>
+		<!-- 设置为生产环境的日志存放目录 -->
+		<!--<Property name="logPath">/opt/logs/edu</Property>-->
+		<Property name="logPath">/Users/danbai/Documents/workspace/logs/steam/</Property>
+
+	</Properties>
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %-5level %M(%F:%L) - %msg%xEx%n" />
+		</Console>
+
+		<RollingFile name="DefaultRollingFile" fileName="${logPath}/edu-default.log"
+			filePattern="${logPath}/edu-default-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout
+				pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %-5level %M(%F:%L) - %msg%xEx%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="20 MB" />
+			</Policies>
+		</RollingFile>
+		
+		<RollingFile name="SosaRollingFile" fileName="${logPath}/edu-sosa.log"
+			filePattern="${logPath}/edu-sosa-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout
+				pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %-5level %M(%F:%L) - %msg%xEx%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="20 MB" />
+			</Policies>
+		</RollingFile>
+
+		<RollingFile name="ComponentRollingFile" fileName="${logPath}/edu-component.log"
+			filePattern="${logPath}/edu-component-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout
+				pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %-5level %M(%F:%L) - %msg%xEx%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="20 MB" />
+			</Policies>
+		</RollingFile>
+
+		<RollingFile name="IntegrationRollingFile" fileName="${logPath}/edu-integration.log"
+			filePattern="${logPath}/edu-component-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout
+				pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %-5level %M(%F:%L) - %msg%xEx%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="20 MB" />
+			</Policies>
+		</RollingFile>
+
+		<RollingFile name="ServiceRollingFile" fileName="${logPath}/edu-service.log"
+			filePattern="${logPath}/edu-service-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout
+				pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %-5level %M(%F:%L) - %msg%xEx%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="20 MB" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="ControllerRollingFile" fileName="${logPath}/edu-controller.log"
+			filePattern="${logPath}/edu-controller-%d{MM-dd-yyyy}-%i.log">
+			<PatternLayout
+				pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %-5level %M(%F:%L) - %msg%xEx%n" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="20 MB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Root level="info">
+			<!-- 生产环境停用Console -->
+			<!-- <appender-ref ref="Console" /> -->
+			<appender-ref ref="DefaultRollingFile" />
+		</Root>
+		<!-- smart-sosa -->
+		<Logger name="net.vinote.sosa" level="info"
+				additivity="false">
+			<appender-ref ref="SosaRollingFile" />
+		</Logger>
+		<!-- kiduke-component -->
+		<Logger name="com.kiduke.edu.component" level="info"
+				additivity="false">
+			<appender-ref ref="ComponentRollingFile" />
+		</Logger>
+
+		<!-- kiduke-service-integration -->
+		<Logger name="com.kiduke.edu.integration" level="info"
+				additivity="false">
+			<appender-ref ref="IntegrationRollingFile" />
+		</Logger>
+
+		<!-- kiduke-service-impl -->
+		<Logger name="com.kiduke.edu.service" level="info"
+				additivity="false">
+			<appender-ref ref="ServiceRollingFile" />
+		</Logger>
+
+		<Logger name="com.kiduke.edu.restful" level="info"
+				additivity="false">
+			<appender-ref ref="ControllerRollingFile" />
+		</Logger>
+		<!-- kiduke-shared -->
+		<!-- <Logger name="com.kiduke.edu.shared" level="trace" additivity="false">
+			<appender-ref ref="Console" />
+		</Logger> -->
+		
+	</Loggers>
+
+</Configuration>
