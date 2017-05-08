@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springbootdemo.iml" filepath="$PROJECT_DIR$/springbootdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/steam-api/steam-api.iml" filepath="$PROJECT_DIR$/steam-api/steam-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/steam-biz/steam-biz.iml" filepath="$PROJECT_DIR$/steam-biz/steam-biz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/steam-boot/steam-boot.iml" filepath="$PROJECT_DIR$/steam-boot/steam-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/steam-service/steam-service.iml" filepath="$PROJECT_DIR$/steam-service/steam-service.iml" />
+    </modules>
+  </component>
+</project>

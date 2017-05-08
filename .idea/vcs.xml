@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/steam-api" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/steam-biz" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/steam-boot" vcs="svn" />
+    <mapping directory="$PROJECT_DIR$/steam-service" vcs="svn" />
+  </component>
+</project>
